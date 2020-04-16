@@ -1,7 +1,7 @@
 const {Parser} = require("acorn");
 const MyParser = Parser.extend(require("acorn-jsx")());
 
-function addSemicolons(code: string) {
+function addSemicolons(code: string): string {
   function getSemicolonSpots(code: string) : number[] { 
     const spots: number[] = [];
     const options = {
@@ -14,7 +14,7 @@ function addSemicolons(code: string) {
     return spots;
   }
 
-  function addSemicolonsInSpots(code: string, spots: number[]) {
+  function addSemicolonsInSpots(code: string, spots: number[]): string {
     for (let i=spots.length-1; i>=0; i--) {
       const x = spots[i];
       code = code.slice(0,x)+';'+code.slice(x);
@@ -26,7 +26,7 @@ function addSemicolons(code: string) {
   return addSemicolonsInSpots(code, spots);
 }
 
-function removeSemicolons(code: string) {
+function removeSemicolons(code: string): string {
   function removeComments(code: string): string {
     const len = code.length-1;
     const options = {
