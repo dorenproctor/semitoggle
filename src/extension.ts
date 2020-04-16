@@ -21,10 +21,10 @@ function alterText(fn: Function) {
 }
 
 export function activate(context: vscode.ExtensionContext) {
-	let addCommand = vscode.commands.registerCommand('extension.addSemicolons', () => {
+	let addCommand = vscode.commands.registerCommand('semitoggle.addSemicolons', () => {
 		alterText(addSemicolons);
 	});
-	const removeCommand = vscode.commands.registerCommand('extension.removeSemicolons', () => {
+	const removeCommand = vscode.commands.registerCommand('semitoggle.removeSemicolons', () => {
 		alterText(removeSemicolons);
 	});
 	context.subscriptions.push(addCommand, removeCommand);
