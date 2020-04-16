@@ -2,7 +2,7 @@
 	"name": "semitoggle",
 	"displayName": "semitoggle",
 	"description": "Add or remove optional semicolons in JavaScript files",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"publisher": "dorenproctor",
 	"engines": {
 		"vscode": "^1.43.0"
